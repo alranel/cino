@@ -6,6 +6,8 @@ cino provides on-hardware continuous integration for GitHub repositories contain
 
 > ⚠️ Warning: this is very experimental.
 
+![](images/github_screenshot.png)
+
 ## Overview
 
 ### Anatomy of a test
@@ -159,3 +161,7 @@ cino-server and cino-runner are provided under the terms of the AGPL-3.0 license
 The cino library is provided under the terms of the MIT license for easier inclusion in any other project.
 
 cino was developed with 💙 by Alessandro Ranellucci.
+
+<p align="center">
+  <img src="https://imgs.xkcd.com/comics/compiling.png">
+</p>
