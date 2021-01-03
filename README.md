@@ -43,6 +43,8 @@ The resulting directory structure looks like this:
 └── cino.yml
 ```
 
+Test it now! Install [cino-runner](cino-runner) and use it in manual mode, with no server required.
+
 ### Multi-board tests
 
 There might be situations where a test involves multiple boards, connected one to each other. This is needed for instance when testing communication protocols or any hardware behavior that can be checked with an external probe. In this case, the cino.yml file would include multiple entries under the `sketches` key, each one with a subdirectory name:
@@ -127,8 +129,8 @@ When someone submits a Pull Request, the following happens:
 1. GitHub calls a webhook exposed by cino-server notifying the repository and the reference of the commit to test.
 2. cino-server clones the repo and looks for tests to run.
 3. For each unique set of requirements, a job is inserted in a queue along so that each runner can pick up the ones they are compatible with.
-  * When testing a library, such jobs are replicated for each architecture that the library is compatible with.
-  * When testing a core, such jobs replicated for each board FQBN supported by the core.
+   * When testing a library, such jobs are replicated for each architecture that the library is compatible with.
+   * When testing a core, such jobs replicated for each board FQBN supported by the core.
 4. Instances of cino-runner subscribe to the jobs queue and retrieve the pending jobs. If they can't handle a job, they mark it in the queue.
 5. For each job, cino-runner clones the repository and runs all the available tests uploading the results to the job queue.
 6. Each test gets compiled with arduino-cli, uploaded to the board(s) and run. Serial output is captured by cino-runner and parsed.
