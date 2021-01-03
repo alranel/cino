@@ -156,6 +156,6 @@ See the README files for [cino-server](cino-server) and [cino-runner](cino-runne
 
 cino-server and cino-runner are provided under the terms of the AGPL-3.0 license.
 
-The cino library is provided under the terms of the MIT library for easier inclusion in any other project.
+The cino library is provided under the terms of the MIT license for easier inclusion in any other project.
 
 cino was developed with 💙 by Alessandro Ranellucci.
