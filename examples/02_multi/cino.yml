@@ -1,0 +1,5 @@
+sketches:
+  - dir: one
+    require-architecture: samd
+  - dir: two
+    require-architecture: megaavr

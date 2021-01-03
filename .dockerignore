@@ -1,0 +1,6 @@
+.git
+cino-*/Dockerfile
+cino-*/README.md
+cino-server/docker-compose.yml
+cino-*/config.yml
+cino-server/github.pem

@@ -1,0 +1,52 @@
+version: '3.4'
+
+x-common-env: &common-env
+  POSTGRES_HOST: db
+  POSTGRES_PORT: 5432
+
+networks:
+  cino-server:
+    driver: bridge
+
+services:
+  cino-server:
+    restart: always
+    env_file: .env
+    environment: *common-env
+    build:
+      dockerfile: cino-server/Dockerfile
+      context: ..
+    volumes:
+      - ./config.yml:/srv/cino/cino-server/config.yml
+      - ./github.pem:/srv/cino/cino-server/github.pem
+    ports:
+      - 8080:8080
+    depends_on:
+      - "db"
+    networks:
+      - cino-server
+    entrypoint:
+      - cino-server
+      - -c
+      - /srv/cino/cino-server/config.yml
+  db:
+    build:
+      dockerfile: Dockerfile.db
+      context: .
+    restart: always
+    env_file: .env
+    environment: *common-env
+    command: -c ssl=on -c ssl_cert_file=/var/lib/postgresql/server.cert -c ssl_key_file=/var/lib/postgresql/server.key
+    volumes:
+      #- ./server.cert:/var/lib/postgresql/server.crt
+      #- ./server.key:/var/lib/postgresql/server.key
+      - ./cino.sql:/docker-entrypoint-initdb.d/cino.sql
+      - ./pg_init.sh:/docker-entrypoint-initdb.d/pg_init.sh
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+    networks:
+      - cino-server
+
+volumes:
+  postgres_data:

@@ -1,0 +1,4 @@
+FROM postgres
+COPY server.cert /var/lib/postgresql/
+COPY server.key /var/lib/postgresql/
+RUN chown postgres:postgres /var/lib/postgresql/server.key

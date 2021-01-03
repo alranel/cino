@@ -1,0 +1,10 @@
+architectures:
+  - avr
+  - samd
+  - mbed
+runners:
+  - id: runner01
+github:
+  private_key_file: /srv/cino/cino-server/github.pem
+  app_id: 123
+  secret: xxxxxxx

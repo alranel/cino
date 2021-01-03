@@ -1,0 +1,12 @@
+runner_id: runner01
+db:
+  dsn: postgres://user:pass@host:5432/cino?sslmode=require
+devices:
+  - fqbn: arduino:megaavr:nona4809
+    port: /dev/cu.usbmodem14101
+    features:
+      - foo
+      - bar
+  - fqbn: arduino:samd:nano_33_iot
+    port: /dev/cu.usbmodem14401
+
