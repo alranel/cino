@@ -149,6 +149,7 @@ Untrusted users can open a pull request that includes malicious code within the 
     * For instance, replacing firmware on other board components.
       * What mitigation is doable for this?
     * ...?
+* When the board can be programmed to run as HID device, taking control of the host
 
 ## Getting started
 
