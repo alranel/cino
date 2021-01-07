@@ -2,7 +2,7 @@
 
 _Continuous Integration for Arduino_
 
-cino provides on-hardware continuous integration for GitHub repositories containing Arduino cores, libraries and sketches. It's fully open source and it's based on the powerful [arduino-cli](https://github.com/arduino/arduino-cli) tool.
+cino provides on-hardware continuous integration for GitHub repositories containing Arduino cores, libraries and sketches. It's fully open source and it's based on the powerful [arduino-cli](https://github.com/arduino/arduino-cli) tool and the [GitHub Checks API](https://docs.github.com/en/free-pro-team@latest/rest/guides/getting-started-with-the-checks-api).
 
 > ⚠️ Warning: this is very experimental.
 
